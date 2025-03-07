@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Dashboard IoT", page_icon="📊", layout="wide")
 
-st.sidebar.title("📡 Monitoramento IoT")
+st.sidebar.title("Monitoramento IoT")
 page = st.sidebar.radio("Navegação", ["Alertas", "Tendências", "Mapa de Calor"])
 
 if page == "Alertas":

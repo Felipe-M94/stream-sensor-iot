@@ -2,7 +2,7 @@ import streamlit as st
 import plotly.express as px
 from utils.database import fetch_data
 
-st.title("🚨 Alertas Críticos")
+st.title("Alertas Criticos")
 
 query = """
     SELECT timestamp, sensor_id, temperature, humidity 
@@ -18,6 +18,6 @@ fig = px.scatter(
     x="timestamp",
     y="temperature",
     color="sensor_id",
-    title="Alertas de Temperatura Crítica",
+    title="Alertas de Temperatura Critica",
 )
 st.plotly_chart(fig)

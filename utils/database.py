@@ -8,17 +8,31 @@ load_dotenv()
 
 
 def get_connection():
-    return psycopg2.connect(
-        dbname=os.getenv("DB_NAME"),
-        user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASSWORD"),
-        host=os.getenv("DB_HOST"),
-        port=os.getenv("DB_PORT"),
-    )
+    """Cria e retorna uma conexão com o banco de dados PostgreSQL."""
+    try:
+        conn = psycopg2.connect(
+            dbname=os.getenv("DB_NAME"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASSWORD"),
+            host=os.getenv("DB_HOST"),
+            port=os.getenv("DB_PORT"),
+        )
+        return conn
+    except psycopg2.OperationalError as e:
+        print(f"Erro ao conectar ao banco de dados: {e}")
+        return None
 
 
 def fetch_data(query):
+    """Executa uma query no banco e retorna um DataFrame."""
     conn = get_connection()
-    df = pd.read_sql(query, conn)
-    conn.close()
-    return df
+    if conn is None:
+        return None
+    try:
+        df = pd.read_sql_query(query, conn)
+        return df
+    except Exception as e:
+        print(f"Erro ao executar query: {e}")
+        return None
+    finally:
+        conn.close()

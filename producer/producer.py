@@ -9,4 +9,4 @@ while True:
     data = generate_sensor_data()
     producer.send(topic, data)
     print(f"Enviado: {data}")
-    time.sleep(1)  # Enviar a cada 5 segundos
+    time.sleep(1)
