@@ -8,8 +8,8 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.StreamHandler(),  # Exibe logs no terminal
-        logging.FileHandler(LOG_FILE, mode="a"),  # Salva logs em arquivo
+        logging.StreamHandler(),
+        logging.FileHandler(LOG_FILE, mode="a"),
     ],
 )
 
