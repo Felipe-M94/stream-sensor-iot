@@ -1,5 +1,3 @@
-from math import e
-from flask import g
 from kafka import KafkaConsumer
 import json
 import os
