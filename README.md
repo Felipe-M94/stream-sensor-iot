@@ -57,11 +57,8 @@ streamlit run app.py
 Acesse a aplicação no navegador:  
 🔗 [Stream Sensor IoT App](https://stream-sensor-iot.streamlit.app/)
 
-## 🏗 Arquitetura do Projeto
-![Arquitetura](docs/arquitetura.png)
-
 ## 🎥 Demonstração
-![Demo](docs/demo.gif)
+![Demo](assets/dash.gif)
 
 ## ⚠️ Possíveis Erros e Soluções
 
